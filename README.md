@@ -48,6 +48,7 @@ Instale as dependências:
 npm install
 ```
 Execute o sistema no terminal:
+
 ```bash
 node src/app.js
 ```
