@@ -75,9 +75,26 @@ Execute o sistema no terminal:
 node src/app.js
 ```
 
-🧪 Testes Automatizados (Jest)
-Rodar todos os testes:
+## 🧪 Testes e Cobertura de Código
 
+Este projeto utiliza **Jest** para execução de testes automatizados e geração de relatório de cobertura.
+
+### 📌 Executar os testes
 ```bash
 npm test
+```
+## 📊 Gerar relatório de cobertura
+```bash
+npm test -- --coverage
+```
+
+### Como abrir o relatório visual?
+
+No Windows:
+```bash
+start coverage/lcov-report/index.html
+```
+No Linux/Mac:
+```bash
+xdg-open coverage/lcov-report/index.html
 ```
