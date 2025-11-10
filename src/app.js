@@ -1,6 +1,6 @@
 // app.js
 const InMemoryRepository = require('./repo/in-memory-repository');
-const LibraryService = require("./services/Library-service");
+const LibraryService = require("./services/library-service");
 const ui = require("./ui/console-ui");
 
 const repo = new InMemoryRepository();
