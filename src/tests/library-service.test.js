@@ -1,5 +1,5 @@
 // tests/library-service.test.js
-const LibraryService = require('../services/Library-service');
+const LibraryService = require('../services/library-service');
 
 // Mock do repositório para simular o comportamento do banco de dados
 const mockRepository = () => {
@@ -270,6 +270,50 @@ describe('LibraryService', () => {
       expect(() => {
         libraryService.listLoans('999');
       }).toThrow('Usuário não encontrado');
+    });
+  });
+
+    describe('Regras de Empréstimo com Datas e Atraso)', () => {
+    beforeEach(() => {
+      libraryService.registerBook('Dom Casmurro', 'Machado de Assis', 1);
+      libraryService.registerUser('123', 'João Silva');
+    });
+
+    test('deve registrar a data do empréstimo', () => {
+      const before = Date.now();
+      libraryService.borrowBook('123', 'Dom Casmurro');
+      const user = repository._getUser('123');
+
+      expect(user.loanCount()).toBe(1);
+
+      const registro = user.loanHistory.find(l => l.title === 'Dom Casmurro' && l.dataDevolucao === null);
+      expect(registro).toBeDefined();
+      expect(registro.dataEmprestimo.getTime()).toBeGreaterThanOrEqual(before);
+    });
+
+    test('deve impedir empréstimo se houver livro atrasado há mais de 7 dias', () => {
+      libraryService.borrowBook('123', 'Dom Casmurro');
+      const user = repository._getUser('123');
+
+      // Simula atraso > 7 dias
+      const registro = user.loanHistory.find(l => l.title === 'Dom Casmurro' && l.dataDevolucao === null);
+      registro.dataEmprestimo = new Date(Date.now() - (8 * 24 * 60 * 60 * 1000));
+
+      // Recoloca estoque do livro para tentar novo empréstimo
+      const book = repository._getBook('Dom Casmurro');
+      book.quantity = 1;
+
+      expect(() => {
+        libraryService.borrowBook('123', 'Dom Casmurro');
+      }).toThrow('Usuário possui empréstimo atrasado e está bloqueado');
+    });
+
+    test('deve registrar data de devolução corretamente', () => {
+      libraryService.borrowBook('123', 'Dom Casmurro');
+      libraryService.returnBook('123', 'Dom Casmurro');
+      const user = repository._getUser('123');
+
+    expect(user.loanCount()).toBe(0);
     });
   });
 });

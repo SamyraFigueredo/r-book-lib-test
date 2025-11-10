@@ -6,10 +6,16 @@ class User {
     this.name = name || "";
     // loans será um Set de títulos emprestados
     this.loans = new Set();
+    this.loanHistory = [];
   }
 
   borrow(title) {
     this.loans.add(title);
+    this.loanHistory.push({
+      title,
+      dataEmprestimo: new Date(),
+      dataDevolucao: null
+    });
   }
 
   hasBorrowed(title) {
@@ -18,6 +24,13 @@ class User {
 
   return(title) {
     this.loans.delete(title);
+    // Marca data de devolução no histórico
+    const loan = this.loanHistory.find(
+      l => l.title === title && l.dataDevolucao === null
+    );
+    if (loan) {
+      loan.dataDevolucao = new Date();
+    }
   }
 
   loanCount() {
@@ -26,6 +39,10 @@ class User {
 
   listLoans() {
     return Array.from(this.loans);
+  }
+  //listar histórico com datas
+  listLoanHistory() {
+    return this.loanHistory.map(l => ({ ...l }));
   }
 }
 

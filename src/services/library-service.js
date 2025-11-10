@@ -1,10 +1,21 @@
 // services/LibraryService.js
-const Book = require("../models/Book");
+const Book = require("../models/book");
 const User = require("../models/User");
 
 class LibraryService {
   constructor(repository) {
     this.repo = repository;
+    this.loanLimit = 3;
+    this.prazoDias = 7;
+  }
+
+  setLoanLimit(limit) {
+    if (limit < 1) throw new Error("O limite deve ser no mínimo 1");
+    this.loanLimit = limit
+  }
+  setPrazoDias(dias) {
+    if (dias < 1) throw new Error("O prazo deve ser ao menos 1 dia");
+    this.prazoDias = dias;
   }
 
   // --- Book operations ---
@@ -53,9 +64,19 @@ class LibraryService {
     const book = this.repo.findBook(title);
     if (!book) throw new Error("Livro não encontrado");
     if (book.quantity <= 0) throw new Error("Nenhum exemplar disponível");
+  
+    // verificar atraso
+    const agora = new Date();
+    const limiteMs = this.prazoDias * 24 * 60 * 60 * 1000
+    
+    for (const registro of user.loanHistory) {
+      if (registro.dataDevolucao === null && (agora - registro.dataEmprestimo) > limiteMs) {
+        throw new Error("Usuário possui empréstimo atrasado e está bloqueado");
+      }
+    }
 
     // regras do usuário
-    if (user.loanCount() >= 3) throw new Error("Usuário atingiu o limite de empréstimos (3)");
+    if (user.loanCount() >= this.loanLimit) throw new Error(`Usuário atingiu o limite de empréstimos (${this.loanLimit})`);
     if (user.hasBorrowed(book.title)) throw new Error("Usuário já tem esse livro emprestado");
 
     // tudo ok -> registra empréstimo
