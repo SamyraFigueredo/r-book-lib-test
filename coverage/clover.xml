@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1762805826904" clover="3.2.0">
+  <project timestamp="1762805826904" name="All files">
+    <metrics statements="79" coveredstatements="74" conditionals="54" coveredconditionals="43" methods="21" coveredmethods="17" elements="154" coveredelements="134" complexity="0" loc="79" ncloc="79" packages="2" files="3" classes="3"/>
+    <package name="models">
+      <metrics statements="24" coveredstatements="23" conditionals="17" coveredconditionals="11" methods="10" coveredmethods="8"/>
+      <file name="book.js" path="C:\workspace\r-book-lib\src\models\book.js">
+        <metrics statements="7" coveredstatements="7" conditionals="9" coveredconditionals="6" methods="1" coveredmethods="1"/>
+        <line num="4" count="27" type="cond" truecount="3" falsecount="1"/>
+        <line num="5" count="27" type="cond" truecount="2" falsecount="0"/>
+        <line num="6" count="25" type="stmt"/>
+        <line num="7" count="25" type="cond" truecount="1" falsecount="1"/>
+        <line num="8" count="25" type="stmt"/>
+        <line num="9" count="25" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+      </file>
+      <file name="user.js" path="C:\workspace\r-book-lib\src\models\user.js">
+        <metrics statements="17" coveredstatements="16" conditionals="8" coveredconditionals="5" methods="9" coveredmethods="7"/>
+        <line num="4" count="22" type="cond" truecount="1" falsecount="1"/>
+        <line num="5" count="22" type="stmt"/>
+        <line num="6" count="22" type="cond" truecount="1" falsecount="1"/>
+        <line num="8" count="22" type="stmt"/>
+        <line num="9" count="22" type="stmt"/>
+        <line num="13" count="15" type="stmt"/>
+        <line num="14" count="15" type="stmt"/>
+        <line num="22" count="22" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+        <line num="28" count="2" type="stmt"/>
+        <line num="29" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="31" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="32" count="2" type="stmt"/>
+        <line num="37" count="21" type="stmt"/>
+        <line num="41" count="1" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="49" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="services">
+      <metrics statements="55" coveredstatements="51" conditionals="37" coveredconditionals="32" methods="11" coveredmethods="9"/>
+      <file name="library-service.js" path="C:\workspace\r-book-lib\src\services\library-service.js">
+        <metrics statements="55" coveredstatements="51" conditionals="37" coveredconditionals="32" methods="11" coveredmethods="9"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="7" count="25" type="stmt"/>
+        <line num="8" count="25" type="stmt"/>
+        <line num="9" count="25" type="stmt"/>
+        <line num="13" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="17" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="23" count="28" type="cond" truecount="2" falsecount="0"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="26" count="27" type="stmt"/>
+        <line num="27" count="25" type="stmt"/>
+        <line num="28" count="25" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="36" count="3" type="stmt"/>
+        <line num="37" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="38" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="41" count="1" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
+        <line num="47" count="23" type="cond" truecount="2" falsecount="0"/>
+        <line num="48" count="1" type="stmt"/>
+        <line num="50" count="22" type="stmt"/>
+        <line num="51" count="22" type="stmt"/>
+        <line num="52" count="22" type="stmt"/>
+        <line num="56" count="1" type="stmt"/>
+        <line num="61" count="21" type="stmt"/>
+        <line num="62" count="21" type="cond" truecount="2" falsecount="0"/>
+        <line num="64" count="20" type="stmt"/>
+        <line num="65" count="20" type="cond" truecount="2" falsecount="0"/>
+        <line num="66" count="19" type="cond" truecount="2" falsecount="0"/>
+        <line num="69" count="18" type="stmt"/>
+        <line num="70" count="18" type="stmt"/>
+        <line num="72" count="18" type="stmt"/>
+        <line num="73" count="8" type="cond" truecount="4" falsecount="0"/>
+        <line num="74" count="1" type="stmt"/>
+        <line num="79" count="17" type="cond" truecount="2" falsecount="0"/>
+        <line num="80" count="16" type="cond" truecount="2" falsecount="0"/>
+        <line num="83" count="15" type="stmt"/>
+        <line num="84" count="15" type="stmt"/>
+        <line num="85" count="15" type="stmt"/>
+        <line num="89" count="5" type="stmt"/>
+        <line num="90" count="5" type="cond" truecount="1" falsecount="1"/>
+        <line num="92" count="5" type="stmt"/>
+        <line num="93" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="95" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="97" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="100" count="2" type="stmt"/>
+        <line num="101" count="2" type="stmt"/>
+        <line num="102" count="2" type="stmt"/>
+        <line num="106" count="2" type="stmt"/>
+        <line num="107" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="108" count="1" type="stmt"/>
+        <line num="112" count="1" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
