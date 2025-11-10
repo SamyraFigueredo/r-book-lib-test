@@ -3,6 +3,28 @@ Sistema simples de gerenciamento de empréstimos de livros, desenvolvido em Node
 
 ---
 
+## ⚙️ Antes de Rodar (Configuração Inicial)
+
+Execute os comandos abaixo dentro da pasta do projeto:
+
+```bash
+npm init -y
+npm install prompt-sync
+npm install --save-dev jest
+```
+Depois edite o arquivo package.json e adicione o seguinte dentro de "scripts":
+
+"scripts": {
+  "start": "node app.js",
+  "test": "jest"
+}
+
+Agora você pode rodar o sistema com(abaixo tem outro comando para rodar):
+
+```bash
+npm start
+```
+
 ## ✨ Funcionalidades Principais
 
 | Código da HU | Funcionalidade | Descrição |
