@@ -2,10 +2,10 @@
   "name": "r-book-lib",
   "version": "1.0.0",
   "main": "app.js",
-"scripts": {
-  "start": "node src/app.js",
-  "test": "jest"
-},
+  "scripts": {
+    "start": "node src/app.js",
+    "test": "jest"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -15,5 +15,14 @@
   },
   "devDependencies": {
     "jest": "29.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SamyraFigueredo/r-book-lib-test.git"
+  },
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/SamyraFigueredo/r-book-lib-test/issues"
+  },
+  "homepage": "https://github.com/SamyraFigueredo/r-book-lib-test#readme"
 }
