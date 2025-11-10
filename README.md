@@ -46,9 +46,15 @@ Instale as dependências:
 
 ```bash
 npm install
-
+```
 Execute o sistema no terminal:
+```bash
 node src/app.js
+```
 
 🧪 Testes Automatizados (Jest)
-Rodar todos os testes: npm test
+Rodar todos os testes:
+
+```bash
+npm test
+```
